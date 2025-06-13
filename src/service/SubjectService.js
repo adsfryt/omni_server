@@ -40,6 +40,23 @@ export default new class SubjectService {
         }
     }
 
+    fillAddDeleteArray(oldArray,newArray){
+        let addArray = [];
+        let deleteArray = [];
+        let OldStudents = new Set(oldArray);
+        let NewStudents = new Set(newArray);
+        for (let i = 0; i < newArray.length; i++) {
+            if(!OldStudents.has(newArray[i])){
+                addArray.push(newArray[i]);
+            }
+        }
+        for (let i = 0; i < oldArray.length; i++) {
+            if(!NewStudents.has(oldArray[i])){
+                deleteArray.push(oldArray[i]);
+            }
+        }
+        return {addArray,deleteArray}
+    }
 
 
 }

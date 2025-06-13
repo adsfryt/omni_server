@@ -9,6 +9,9 @@ import SubjectService from "../service/SubjectService.js";
 import QuestionService from "../service/QuestionService.js";
 import Question from "../Schema/QuestionSchema.js";
 import LectureService from "../service/LectureService.js";
+import Lecture from "../Schema/LectureSchema.js";
+import FileService from "../service/FileService.js";
+import fs from "fs";
 
 export default new class QuestionAction{
     async create(req,res){
@@ -84,6 +87,147 @@ export default new class QuestionAction{
             console.log(e)
         }
     }
+
+
+    async update(req,res){
+        try{
+            let data = JSON.parse(req.body.data);
+            if(!data.question){
+                res.status(400).json({"error":"incorrect data"});
+                return;
+            }
+
+            let OldQuestion = await QuestionSchema.findById(data.question);
+            if(!OldQuestion){
+                res.status(400).json({"error":"can't find subject"});
+                return;
+            }
+            let UpdateData = OldQuestion.data[OldQuestion.data.length - 1];
+
+            console.log(data.var);
+
+            switch (OldQuestion.type) {
+                case 0:{
+                    if(data.var.name){
+                        UpdateData.name = data.var.name;
+                    }
+                    if(data.var.description){
+                        let files = FileService.filesToArray(req?.files?.files);
+                        FileService.fillDataFiles(data.var.description,files);
+                        let filesArr = UpdateData.description.files;
+                        let path = Data.QuestionFolder+"/"+data.question +"/";
+                        FileSystem.createPath(path);
+
+                        for (let i = 0; i < data.var.description.deleteFiles.length; i++) {
+                            var index = filesArr.indexOf(data.var.description.deleteFiles[i]);
+                            if (index > -1) {
+                                filesArr.splice(index, 1);
+                            }
+                        }
+                        let newArr = [...data.var.description.files,...filesArr];
+
+                        for (let i = 0; i < newArr.length; i++) {
+
+                            if(newArr.indexOf(newArr[i]) !== i){
+                                throw new Error("Names of files can't repeat");
+                            }
+                        }
+
+                        for (let i = 0; i < data.var.description.deleteFiles.length; i++) {
+                            try{
+                                fs.unlinkSync(path + data.var.description.deleteFiles[i]);
+                            }catch (e) {
+                                console.log(e)
+                            }
+                        }
+                        delete data.var.description.deleteFiles;
+                        for (let i = 0; i < files.length; i++) {
+                            await files[i].mv(path + files[i].name);
+                        }
+                        data.var.description.files = newArr;
+                        UpdateData.description = data.var.description;
+                    }
+                    if(typeof data.var.missCheck === "string"){
+                        console.log(",,")
+                        UpdateData.missCheck = !isNaN(parseFloat(data.var.missCheck)) ? parseFloat(data.var.missCheck) : 0;
+                    }
+                    if(typeof data.var.extraCheck=== "string"){
+                        UpdateData.extraCheck = !isNaN(parseFloat(data.var.extraCheck)) ? parseFloat(data.var.extraCheck) : 0;
+                    }
+                    if(typeof data.var.minPoints === "string"){
+                        UpdateData.minPoints = !isNaN(parseFloat(data.var.minPoints)) ? parseFloat(data.var.minPoints) : 0;
+                    }
+                    if(typeof data.var.maxPoints === "string"){
+                        UpdateData.maxPoints = !isNaN(parseFloat(data.var.maxPoints)) ? parseFloat(data.var.maxPoints) : -1;
+                    }
+                    if(typeof data.var.minCheck === "string"){
+                        UpdateData.minCheck = !isNaN(parseInt(data.var.minCheck)) ? parseInt(data.var.minCheck) : -1;
+                    }
+                    if(typeof data.var.maxCheck === "string"){
+                        UpdateData.maxCheck = !isNaN(parseInt(data.var.maxCheck)) ? parseInt(data.var.maxCheck) : -1;
+                    }
+
+                    if(typeof data.var.mix === "boolean"){
+                        UpdateData.mix = data.var.mix;
+                    }
+                    if(typeof data.var.extraCheckAll === "boolean"){
+                        UpdateData.extraCheckAll = data.var.extraCheckAll;
+                    }
+                    if(typeof data.var.missCheckAll === "boolean"){
+                        UpdateData.missCheckAll = data.var.missCheckAll;
+                    }
+                    if(data.var.options && data.var.options instanceof Array ){
+                        let isHaveNecessary = true;
+                        for (let i = 0; i < data.var.options.length; i++) {
+                            if(!data.var.options[i].text){
+                                isHaveNecessary = false;
+                                break;
+                            }
+                        }
+                        if(isHaveNecessary){
+                            UpdateData.options = data.var.options;
+                        }
+                    }
+                    if(data.var.answer && data.var.answer instanceof Array ){
+                        let isHaveNecessary = true;
+                        for (let i = 0; i < data.var.answer.length; i++) {
+                            if(!(typeof data.var.answer[i].points === "number") || !(typeof data.var.answer[i].check === "boolean")){
+                                isHaveNecessary = false;
+                                break;
+                            }
+                        }
+                        if(isHaveNecessary){
+                            UpdateData.answer = data.var.answer;
+                        }
+                    }
+                    if(data.var.hint && data.var.hint instanceof Array ){
+                        let isHaveNecessary = true;
+                        for (let i = 0; i < data.var.hint.length; i++) {
+                            if(!(typeof data.var.hint[i].points === "number") || !data.var.hint[i].text){
+                                isHaveNecessary = false;
+                                break;
+                            }
+                        }
+                        if(isHaveNecessary){
+                            UpdateData.hint = data.var.hint;
+                        }
+                    }
+                }
+            }
+            console.log(UpdateData)
+            let NewQuestion = await QuestionSchema.findByIdAndUpdate(data.question, {$push:{data:UpdateData}});
+            if(!NewQuestion){
+                res.status(400).json({"error":"can't update lecture"});
+                return;
+            }
+            res.json(NewQuestion)
+
+        }catch (e) {
+            console.log(e)
+            res.status(400).json({"error":"can't update lecture"})
+        }
+    }
+
 
     async getQuestionsBySubject(req,res){
         try{

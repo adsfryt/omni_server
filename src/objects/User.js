@@ -4,6 +4,8 @@ import Data from "../../Data.js";
 import User from "../Schema/UserSchema.js";
 import Service from "../service/UserService.js";
 import tokenAction from "./Token.js";
+import UserSchema from "../Schema/UserSchema.js";
+import MongoService from "../service/MongoService.js";
 
 export default new class UserAction{
 
@@ -67,7 +69,17 @@ export default new class UserAction{
             console.log(e)
         }
     }
-
+    async getPublicDatas(req, res){
+        try {
+            var users = req.body;
+            let r = await UserSchema.find({"userId":{$in:users}},"_id firstName lastName userId login")
+            res.json(r);
+            return;
+        }catch (e){
+            res.status(400).json({"error":"something happened"});
+            console.log(e)
+        }
+    }
     async refreshToken(req, res){
         try {
             var {refreshToken} = req.body;
@@ -88,9 +100,8 @@ export default new class UserAction{
                     let Token = tokenAction.createToken(userDto);
                     accessTokenN = Token.accessToken;
                     refreshTokenN = Token.refreshToken;
-                    user.refreshToken[i] = [accessTokenN,refreshTokenN];
-
-                    await user.save();
+                    let newPair = [Token.accessToken,Token.refreshToken];
+                    var userUpdate = await User.findOneAndUpdate({userId: refreshData.userId},{$push:{refreshToken : newPair }});
                     break;
                 }
             }

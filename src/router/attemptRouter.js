@@ -16,8 +16,10 @@ attemptRouter.post('/getAttemptsInTaskByUser',User.middleware,Attempt.getAttempt
 attemptRouter.post('/getAttemptsBySubject',User.middleware,Attempt.getAttemptsBySubject)
 attemptRouter.post('/getAttemptsByUser',User.middleware,Attempt.getAttemptsByUser)
 attemptRouter.post('/getAttemptsByTask',User.middleware,Attempt.getAttemptsByTask)
+attemptRouter.post('/isTaskHaveAttempt',User.middleware,Attempt.isTaskHaveAttempt)
 attemptRouter.post('/check',User.middleware) //пока не работает (проверка заданий именно от модератора)
 attemptRouter.post('/finish',User.middleware)
 attemptRouter.post('/getAttemptQuestions',User.middleware,Attempt.getAttemptQuestions)
-
+attemptRouter.post('/saveAnswer',User.middleware,Attempt.saveAnswer)
+attemptRouter.post('/stop',User.middleware,Attempt.stop)
 export default attemptRouter;

@@ -8,5 +8,7 @@ userRouter.post("/loginGithub",userAction.loginGithub)
 userRouter.get('/link',  Service.link);
 userRouter.post('/data',  userAction.middleware, userAction.getData);
 userRouter.get('/publicData', userAction.getPublicData);
+userRouter.post('/publicDatas', userAction.getPublicDatas);
 userRouter.post('/refreshToken', userAction.refreshToken);
+
 export default userRouter;

@@ -4,6 +4,7 @@ import Lecture from "../objects/Lecture.js";
 
 let lectureRouter = new Router();
 lectureRouter.post('/create',User.middleware, Lecture.create)
+lectureRouter.post('/update',User.middleware, Lecture.update)
 lectureRouter.post('/getLecturesBySubject',User.middleware, Lecture.getLecturesBySubject)
 lectureRouter.post('/getLecturesByIds',User.middleware, Lecture.getLecturesByIds)
 export default lectureRouter;

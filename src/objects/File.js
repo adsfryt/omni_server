@@ -5,6 +5,9 @@ import LectureSchema from "../Schema/LectureSchema.js";
 import LectureService from "../service/LectureService.js";
 import TaskSchema from "../Schema/TaskSchema.js";
 import TaskService from "../service/TaskService.js";
+import QuestionService from "../service/QuestionService.js";
+import QuestionSchema from "../Schema/QuestionSchema.js";
+import AttemptSchema from "../Schema/AttemptSchema.js";
 
 
 export default new class FileAction{
@@ -18,7 +21,7 @@ export default new class FileAction{
             }
             let Subject = await SubjectSchema.findById(subject);
             let path = Data.SubjectFolder + subject + "/"+Subject.banner;
-            console.log(path)
+
             if(!fs.existsSync(path)){
                 res.status(400).json({"error":"can't find banner"});
                 return;
@@ -31,6 +34,28 @@ export default new class FileAction{
         }
     }
 
+    async getSubject(req,res){
+        try{
+            let {subject,name} = req.query;
+
+            if(!subject){
+                res.status(400).json({"error":"invalid input data"});
+                return;
+            }
+            let Subject = await SubjectSchema.findById(subject);
+            let path = Data.SubjectFolder + subject + "/description/"+name;
+            console.log(path)
+            if(!fs.existsSync(path)){
+                res.status(400).json({"error":"can't find banner"});
+                return;
+            }
+            return res.download(path);
+
+        }catch (e) {
+            res.status(400).json({"error":"something happened"});
+            console.log(e)
+        }
+    }
     async getLecture(req,res){
         try{
 
@@ -95,4 +120,65 @@ export default new class FileAction{
         }
     }
 
+    async getQuestion(req,res){
+        try{
+
+            let {question,  name} = req.query;
+
+            if(!(question && name)){
+                res.status(400).json({"error":"invalid input data"});
+                return;
+            }
+
+            let Question = await QuestionSchema.findById(question);
+
+            let allowAsStudent =  QuestionService.filterBoolean(res.locals,Question);
+
+            if(!(allowAsStudent )){
+                res.status(400).json({"error":"not allow"});
+                return;
+            }
+            let path = Data.QuestionFolder + question + "/"+ name;
+            if(!fs.existsSync(path)){
+                res.status(400).json({"error":"can't find file"});
+                return;
+            }
+            return res.download(path);
+
+        }catch (e) {
+            console.log(e)
+            res.status(400).json({"error":"something happened"});
+        }
+    }
+
+    async getAttemptQuestion(req,res){
+        try{
+
+            let {question, name, attempt} = req.query;
+
+            if(!(question && name && attempt)){
+                res.status(400).json({"error":"invalid input data"});
+                return;
+            }
+
+            let Question = await QuestionSchema.findById(question);
+            let Attempt = await AttemptSchema.findById(attempt);
+            let allowAsStudent =  QuestionService.filterBoolean(res.locals,Question);
+            if(!(allowAsStudent || Attempt.user === res.locals.userId)){
+                res.status(400).json({"error":"don't allow"});
+                return;
+            }
+
+            let path = Data.QuestionFolder + question + "/"+ name;
+            if(!fs.existsSync(path)){
+                res.status(400).json({"error":"can't find file"});
+                return;
+            }
+            return res.download(path);
+
+        }catch (e) {
+            console.log(e)
+            res.status(400).json({"error":"something happened"});
+        }
+    }
 }

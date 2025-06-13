@@ -17,6 +17,7 @@ const Task = new mongoose.Schema({
     showAnswer:{type:Number, required:true},
     customSettings:{type: mongoose.Schema.Types.Mixed, required:true},
     script:{type: String},
+    showResult:{type: Number, required:true},
     subject:{type:String, required:true},
 })
 

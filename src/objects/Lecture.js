@@ -7,6 +7,11 @@ import FileSystem from "./FileSystem.js";
 import User from "../Schema/UserSchema.js";
 import SubjectService from "../service/SubjectService.js";
 import LectureService from "../service/LectureService.js";
+import FileService from "../service/FileService.js";
+import Subject from "../Schema/SubjectSchema.js";
+import fs from "fs";
+import UserSchema from "../Schema/UserSchema.js";
+import UserService from "../service/UserService.js";
 
 
 export default new class LectureAction {
@@ -77,6 +82,75 @@ export default new class LectureAction {
         }
     }
 
+    async update(req,res){
+        try{
+            let data = JSON.parse(req.body.data);
+            if(!data.lecture){
+                res.status(400).json({"error":"incorrect data"});
+                return;
+            }
+
+            let OldLecture = await Lecture.findById(data.lecture);
+            if(!OldLecture){
+                res.status(400).json({"error":"can't find subject"});
+                return;
+            }
+            let UpdateData = {};
+
+            //console.log(data);
+
+            if(data.title){
+                UpdateData.title = data.title;
+            }
+            if(data.data){
+                let files = FileService.filesToArray(req?.files?.files);
+                FileService.fillDataFiles(data.data,files);
+                let filesArr = OldLecture.data.files;
+                let path = Data.LectureFolder+"/"+data.lecture +"/";
+                FileSystem.createPath(path);
+                for (let i = 0; i < data.data.deleteFiles.length; i++) {
+                    try{
+                        var index = filesArr.indexOf(data.data.deleteFiles[i]);
+                        if (index > -1) {
+                            filesArr.splice(index, 1);
+                        }
+                        fs.unlinkSync(path + data.data.deleteFiles[i]);
+                    }catch (e) {
+                        console.log(e)
+                    }
+                }
+                delete data.data.deleteFiles;
+                for (let i = 0; i < files.length; i++) {
+                    await files[i].mv(path + files[i].name);
+                }
+                data.data.files = [...data.data.files,...filesArr];
+                UpdateData.data = data.data;
+            }
+            if(data.users && data.users instanceof Array ){
+                UpdateData.users = data.users;
+            }
+            console.log(data.allUsers,data.active)
+            if(typeof data.allUsers === "boolean"){
+                UpdateData.allUsers = data.allUsers;
+            }
+            if(typeof data.active === "boolean"){
+                UpdateData.active = data.active;
+            }
+
+            let NewLecture = await Lecture.findByIdAndUpdate(data.lecture,UpdateData);
+            if(!NewLecture){
+                res.status(400).json({"error":"can't update lecture"});
+                return;
+            }
+
+            res.json(NewLecture)
+
+        }catch (e) {
+            console.log(e)
+            res.status(400).json({"error":"can't update lecture"})
+        }
+    }
+
     async getLecturesBySubject(req,res){
         try{
             let {subject} = req.body;
@@ -92,7 +166,7 @@ export default new class LectureAction {
             let arrayLectures = await LectureService.getLecturesByIds(Subject.lectures,false);
             //console.log(arrayLectures)
             let result = LectureService.filter(res.locals,arrayLectures,!findInPrivelageList, findInSubscribeSubjects, false);
-
+            //console.log(result)
             //console.log(response);
             res.json(result)
             return;

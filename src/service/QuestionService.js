@@ -1,6 +1,5 @@
-import LectureSchema from "../Schema/LectureSchema.js";
-import MongoService from "./MongoService.js";
 import QuestionSchema from "../Schema/QuestionSchema.js";
+import MongoService from "./MongoService.js";
 
 export default new class QuestionService{
     async getQuestionsByIds(arrayQuestions,fillGap=true){
@@ -129,6 +128,24 @@ export default new class QuestionService{
                 return Maska[id];
             });
             return array;
+        }
+    }
+
+    filterBoolean(User,Question){
+
+        if(!Question || !User){
+            return false;
+        }
+
+        if( ( User.mySubjects.includes(Question.subject) || User.moderatorSubjects.includes(Question.subject)  )){
+            return true;
+        }
+        if( ( User.subscribeSubjects.includes(Question.subject)  )){
+            let state = Question.public;
+            //key.users = undefined;
+            return state;
+        }else{
+            return false;
         }
     }
 

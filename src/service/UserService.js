@@ -134,27 +134,16 @@ export default new class UserService {
     }
 
     checkInOwnerList(User,subject){
-        if(User.mySubjects.includes(subject)){
-            return true;
-        }
-        return false;
+        return User.mySubjects.includes(subject);
     }
     checkInModeratorList(User,subject){
-        if(User.moderatorSubjects.includes(subject)){
-            return true;
-        }
-        return false;
+        return User.moderatorSubjects.includes(subject);
     }
     checkInSubscribeList(User,subject){
-        if(User.subscribeSubjects.includes(subject)){
-            return true;
-        }
-        return false;
+        return User.subscribeSubjects.includes(subject);
     }
     checkInPrivelageList(User,subject){
-        if(User.moderatorSubjects.includes(subject) || User.mySubjects.includes(subject) ){
-            return true;
-        }
-        return false;
+
+        return User.moderatorSubjects.includes(subject) || User.mySubjects.includes(subject) ;
     }
 }

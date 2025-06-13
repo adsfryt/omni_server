@@ -1,0 +1,1065 @@
+wsl: Конфигурация прокси-сервера localhost обнаружена, но не отражена в WSL. WSL в режиме NAT не поддерживаетпрокси-серверы localhost.
+asan@DESKTOP-C29MHU6:~$ ssh Asan@192.168.1.135
+Asan@192.168.1.135's password:
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-60-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri May 30 04:25:33 PM UTC 2025
+
+  System load:  0.25               Processes:               139
+  Usage of /:   29.3% of 24.44GB   Users logged in:         1
+  Memory usage: 13%                IPv4 address for enp0s3: 192.168.1.135
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+69 updates can be applied immediately.
+6 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Fri May 30 11:47:02 2025 from 192.168.232.111
+Asan@Ubuntu2:~$ ls
+ansible-course  app  cpp_hello_world  get-docker.sh  nohup.out  ubuntu-sshd
+Asan@Ubuntu2:~$ cd ansible-course
+Asan@Ubuntu2:~/ansible-course$ nano hosts
+Asan@Ubuntu2:~/ansible-course$ nano hosts
+Asan@Ubuntu2:~/ansible-course$ nano inventory.yml
+Asan@Ubuntu2:~/ansible-course$ ansible all -i inventory.yml -m ping
+[WARNING]: Found both group and host with same name: teacher
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student5 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student4 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student6 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student8 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host teacher is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+teacher | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student9 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student7 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+Asan@Ubuntu2:~/ansible-course$ ansible all -m shell -a "cp /etc/apt/sources.list /etc/apt/sources.list~"
+ansible all -m shell -a "sed -i 's|archive.ubuntu.com|mirror.yandex.ru|g' /etc/apt/sources.list"
+ansible all -m shell -a "sed -i 's|security.ubuntu.com|mirror.yandex.ru|g' /etc/apt/sources.list"
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student3 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student2 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student5 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student1 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student4 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student7 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student6 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student8 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host teacher1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+teacher1 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student9 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student5 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student4 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student1 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student3 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student2 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student6 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student8 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student7 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host teacher1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+teacher1 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student9 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student3 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student2 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student5 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student1 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student4 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student6 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student8 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student9 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student7 | CHANGED | rc=0 >>
+
+[WARNING]: Platform linux on host teacher1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+teacher1 | CHANGED | rc=0 >>
+
+Asan@Ubuntu2:~/ansible-course$ ssh root@192.168.1.181
+root@192.168.1.181's password:
+Last login: Fri May 30 16:32:36 2025 from 192.168.1.135
+root@6bf0f1e495d7:~# nano /etc/apt/sources.list
+-bash: nano: command not found
+root@6bf0f1e495d7:~# cat /etc/apt/sources.list
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+deb http://mirror.yandex.ru/ubuntu/ jammy main restricted
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://mirror.yandex.ru/ubuntu/ jammy-updates main restricted
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://mirror.yandex.ru/ubuntu/ jammy universe
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy universe
+deb http://mirror.yandex.ru/ubuntu/ jammy-updates universe
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://mirror.yandex.ru/ubuntu/ jammy multiverse
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy multiverse
+deb http://mirror.yandex.ru/ubuntu/ jammy-updates multiverse
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-updates multiverse
+
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+deb http://mirror.yandex.ru/ubuntu/ jammy-backports main restricted universe multiverse
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-backports main restricted universe multiverse
+
+deb http://mirror.yandex.ru/ubuntu/ jammy-security main restricted
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-security main restricted
+deb http://mirror.yandex.ru/ubuntu/ jammy-security universe
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-security universe
+deb http://mirror.yandex.ru/ubuntu/ jammy-security multiverse
+# deb-src http://mirror.yandex.ru/ubuntu/ jammy-security multiverse
+root@6bf0f1e495d7:~# apt install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package nano is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'nano' has no installation candidate
+root@6bf0f1e495d7:~# exit
+logout
+Connection to 192.168.1.181 closed.
+Asan@Ubuntu2:~/ansible-course$ ansible all -m apt -a "update_cache=yes"
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student4 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748622932,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748622940,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student5 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748622948,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748622933,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748622942,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student8 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748623040,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student9 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748623044,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student7 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748623048,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host teacher1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+teacher1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748623050,
+    "cache_updated": false,
+    "changed": false
+}
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+student6 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "cache_update_time": 1748623054,
+    "cache_updated": false,
+    "changed": false
+}
+Asan@Ubuntu2:~/ansible-course$ ssh root@192.168.1.181
+root@192.168.1.181's password:
+Last login: Fri May 30 16:34:55 2025 from 192.168.1.135
+root@6bf0f1e495d7:~# apt install nano
+^Cading package lists... 46%
+root@6bf0f1e495d7:~# exit
+logout
+Connection to 192.168.1.181 closed.
+Asan@Ubuntu2:~/ansible-course$ nano network.yml
+Asan@Ubuntu2:~/ansible-course$ ansible-playbook -i inventory.yml network.yml
+[WARNING]: Found both group and host with same name: teacher
+
+PLAY [Настройка сети на всех хостах] *************************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student2]
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student5]
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student3]
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student4]
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student1]
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student6]
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student7]
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student8]
+[WARNING]: Platform linux on host teacher is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [teacher]
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student9]
+
+TASK [Install sudo] ******************************************************************************************
+changed: [student4]
+changed: [student5]
+changed: [student3]
+changed: [student1]
+changed: [student2]
+changed: [student8]
+changed: [student7]
+changed: [teacher]
+changed: [student6]
+changed: [student9]
+
+TASK [Add group to sudoers] **********************************************************************************
+changed: [student2]
+changed: [student3]
+changed: [student4]
+changed: [student1]
+changed: [student5]
+changed: [student6]
+changed: [student7]
+changed: [student9]
+changed: [teacher]
+changed: [student8]
+
+TASK [Добавить Google DNS в /etc/resolv.conf] ****************************************************************
+changed: [student3]
+changed: [student4]
+changed: [student5]
+changed: [student2]
+changed: [student1]
+changed: [student6]
+changed: [student7]
+changed: [student8]
+changed: [teacher]
+changed: [student9]
+
+PLAY RECAP ***************************************************************************************************
+student1                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student2                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student3                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student4                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student5                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student6                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student7                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student8                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student9                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+teacher                    : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Asan@Ubuntu2:~/ansible-course$ ssh root@192.168.1.181
+root@192.168.1.181's password:
+Last login: Fri May 30 16:44:04 2025 from 192.168.1.135
+root@6bf0f1e495d7:~# cat /etc/resolv.conf
+# Generated by Docker Engine.
+# This file can be edited; Docker Engine will not make further changes once it
+# has been modified.
+
+nameserver 127.0.0.11
+search .
+options edns0 trust-ad ndots:0
+
+# Based on host file: '/etc/resolv.conf' (internal resolver)
+# ExtServers: [77.88.8.8 8.8.8.8]
+# Overrides: [nameservers]
+# Option ndots from: internal
+
+nameserver 8.8.8.8
+root@6bf0f1e495d7:~# exit
+logout
+Connection to 192.168.1.181 closed.
+Asan@Ubuntu2:~/ansible-course$ ansible-playbook -i inventory.yml users.yml
+[WARNING]: Found both group and host with same name: teacher
+
+PLAY [Настройка пользователей на всех хостах] ****************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student5]
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student1]
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student4]
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student2]
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student3]
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student6]
+[WARNING]: Platform linux on host teacher is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [teacher]
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student7]
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student8]
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student9]
+
+TASK [Создать группу students (GID=2000)] ********************************************************************
+changed: [student3]
+changed: [student2]
+changed: [student1]
+changed: [student5]
+changed: [student4]
+skipping: [teacher]
+changed: [student8]
+changed: [student6]
+changed: [student9]
+changed: [student7]
+
+PLAY [Создание студент-юзера и его SSH-ключа] ****************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+ok: [student1]
+ok: [student5]
+ok: [student3]
+ok: [student4]
+ok: [student2]
+ok: [student7]
+ok: [student6]
+ok: [student8]
+ok: [student9]
+
+TASK [Создать пользователя student (UID=2000)] ***************************************************************
+changed: [student2]
+changed: [student4]
+changed: [student3]
+changed: [student5]
+changed: [student1]
+changed: [student6]
+changed: [student7]
+changed: [student8]
+changed: [student9]
+
+TASK [Создать .ssh у student] ********************************************************************************
+changed: [student3]
+changed: [student4]
+changed: [student1]
+changed: [student5]
+changed: [student2]
+changed: [student9]
+changed: [student6]
+changed: [student7]
+changed: [student8]
+
+TASK [Скопировать публичный ключ для student] ****************************************************************
+changed: [student2]
+changed: [student4]
+changed: [student1]
+changed: [student3]
+changed: [student5]
+changed: [student7]
+changed: [student8]
+changed: [student6]
+changed: [student9]
+
+PLAY [Создание professor-юзера и его SSH-ключа] **************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+ok: [teacher]
+
+TASK [Создать группу professor] ******************************************************************************
+changed: [teacher]
+
+TASK [Создать пользователя professor] ************************************************************************
+changed: [teacher]
+
+TASK [Создать .ssh у professor] ******************************************************************************
+changed: [teacher]
+
+TASK [Скопировать публичный ключ для professor] **************************************************************
+changed: [teacher]
+
+PLAY RECAP ***************************************************************************************************
+student1                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student2                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student3                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student4                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student5                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student6                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student7                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student8                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student9                   : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+teacher                    : ok=6    changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+Asan@Ubuntu2:~/ansible-course$ nano software.yml
+Asan@Ubuntu2:~/ansible-course$ ansible-playbook -i inventory.yml software.yml
+[WARNING]: Found both group and host with same name: teacher
+
+PLAY [Установка софта на студенческих ПК] ********************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student1]
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student5]
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student2]
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student3]
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student4]
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student6]
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student8]
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student7]
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student9]
+
+TASK [Установить python3, git, vim, gcc] *********************************************************************
+changed: [student4]
+changed: [student2]
+changed: [student5]
+changed: [student1]
+changed: [student3]
+changed: [student9]
+changed: [student6]
+changed: [student8]
+changed: [student7]
+
+PLAY [Настройка софта на ПК преподавателя] *******************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+[WARNING]: Platform linux on host teacher is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [teacher]
+
+TASK [Обновить apt-кеш] **************************************************************************************
+ok: [teacher]
+
+TASK [Установить python3, gcc] *******************************************************************************
+changed: [teacher]
+
+TASK [Удалить git (если установлен)] *************************************************************************
+ok: [teacher]
+
+PLAY RECAP ***************************************************************************************************
+student1                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student2                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student3                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student4                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student5                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student6                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student7                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student8                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student9                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+teacher                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Asan@Ubuntu2:~/ansible-course$ mkdir student_materials
+Asan@Ubuntu2:~/ansible-course$ nano student_materials/student
+Asan@Ubuntu2:~/ansible-course$ mkdir teacher_materials
+Asan@Ubuntu2:~/ansible-course$ nano teacher_materials/teacher
+Asan@Ubuntu2:~/ansible-course$ nano materials.yml
+Asan@Ubuntu2:~/ansible-course$ ansible-playbook materials.yml
+[WARNING]: Could not match supplied host pattern, ignoring: students
+
+PLAY [Копирование учебных материалов студентам] **************************************************************
+skipping: no hosts matched
+[WARNING]: Could not match supplied host pattern, ignoring: professor
+
+PLAY [Копирование учебных материалов преподавателю] **********************************************************
+skipping: no hosts matched
+
+PLAY RECAP ***************************************************************************************************
+
+Asan@Ubuntu2:~/ansible-course$ nano materials.yml
+Asan@Ubuntu2:~/ansible-course$ ansible-playbook -i inventory.yml materials.yml
+[WARNING]: Found both group and host with same name: teacher
+
+PLAY [Копирование учебных материалов студентам] **************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student1]
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student5]
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student4]
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student2]
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student3]
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student6]
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student7]
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student8]
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student9]
+
+TASK [Скопировать student_materials с контроллера на /home/student/materials] ********************************
+fatal: [student5]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student1]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student2]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student4]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student3]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student7]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student6]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student9]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+fatal: [student8]: FAILED! => {"changed": false, "checksum": "c8767f7c8d46bf23037daffcde0027f1bb8fc765", "msg": "Unsupported parameters for (ansible.legacy.copy) module: recurse. Supported parameters include: _original_basename, attributes, backup, checksum, content, dest, directory_mode, follow, force, group, local_follow, mode, owner, remote_src, selevel, serole, setype, seuser, src, unsafe_writes, validate (attr)."}
+
+PLAY RECAP ***************************************************************************************************
+student1                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student2                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student3                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student5                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student6                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student7                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student8                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+student9                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+Asan@Ubuntu2:~/ansible-course$ nano materials.yml
+Asan@Ubuntu2:~/ansible-course$ ansible-playbook -i inventory.yml materials.yml
+[WARNING]: Found both group and host with same name: teacher
+
+PLAY [Копирование учебных материалов студентам] **************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+[WARNING]: Platform linux on host student3 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student3]
+[WARNING]: Platform linux on host student5 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student5]
+[WARNING]: Platform linux on host student1 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student1]
+[WARNING]: Platform linux on host student4 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student4]
+[WARNING]: Platform linux on host student2 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student2]
+[WARNING]: Platform linux on host student6 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student6]
+[WARNING]: Platform linux on host student7 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student7]
+[WARNING]: Platform linux on host student9 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student9]
+[WARNING]: Platform linux on host student8 is using the discovered Python interpreter at /usr/bin/python3.10,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [student8]
+
+TASK [Скопировать student_materials с контроллера на /home/student/materials] ********************************
+changed: [student5]
+changed: [student4]
+changed: [student3]
+changed: [student1]
+changed: [student2]
+changed: [student6]
+changed: [student7]
+changed: [student9]
+changed: [student8]
+[WARNING]: Could not match supplied host pattern, ignoring: professor
+
+PLAY [Копирование учебных материалов преподавателю] **********************************************************
+skipping: no hosts matched
+
+PLAY RECAP ***************************************************************************************************
+student1                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student2                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student3                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student4                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student5                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student6                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student7                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student8                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+student9                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Asan@Ubuntu2:~/ansible-course$ ssh root@192.168.1.181
+root@192.168.1.181's password:
+Last login: Fri May 30 17:31:03 2025 from 192.168.1.135
+root@6bf0f1e495d7:~# ls
+root@6bf0f1e495d7:~# ls /home/student/materials
+student_materials
+root@6bf0f1e495d7:~#
